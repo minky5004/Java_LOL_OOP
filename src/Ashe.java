@@ -1,4 +1,4 @@
-public class Ashe extends Champion {
+public class Ashe extends Champion implements RangedChampion {
 
     private String name;
     private int level;
@@ -10,10 +10,22 @@ public class Ashe extends Champion {
         super(name, hp, attackDamage, defense);
     }
 
-    public void levelUp() {
-        level += 1;
-        hp += 98;
-        attackDamage += 69;
+    @Override
+    public void useQ(Champion target) {
+        System.out.println(getName() + "의 연사(Q)!");
+        target.takeDamage((attackDamage) * 2);
     }
 
+    public void levelUp() {
+        level += 1;
+        hp += 101;
+        attackDamage += 3;
+        defense +=5;
+    }
+
+    @Override
+    public void kite(Champion target) {
+        System.out.println(getName() + " 카이팅!");
+        target.takeDamage((attackDamage)+10);
+    }
 }

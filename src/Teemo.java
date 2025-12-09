@@ -1,4 +1,4 @@
-public class Teemo extends Champion {
+public class Teemo extends Champion implements RangedChampion {
 
     private String name;
     private int level;
@@ -10,9 +10,22 @@ public class Teemo extends Champion {
         super(name, hp, attackDamage, defense);
     }
 
+    @Override
+    public void useQ(Champion target) {
+        System.out.println(name + "의 실명다트(Q)");
+        target.takeDamage(80);
+    }
+
     public void levelUp() {
         level += 1;
-        hp += 98;
-        attackDamage += 69;
+        hp += 104;
+        attackDamage += 3;
+        defense += 5;
+    }
+
+    @Override
+    public void kite(Champion target) {
+        System.out.println(getName() + " 카이팅!");
+        target.takeDamage((attackDamage)+10);
     }
 }

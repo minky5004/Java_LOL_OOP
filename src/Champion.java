@@ -19,6 +19,8 @@ public abstract class Champion {
         target.takeDamage(attackDamage);
     }
 
+    public abstract void useQ(Champion target);
+
     public void takeDamage(int damage) {
         int actualDamage = damage - defense;
         if (actualDamage < 0) actualDamage = 0;

@@ -1,4 +1,4 @@
-public class Garen extends Champion{
+public class Garen extends Champion implements MeleeChampion{
 
     private String name;
     private int level;
@@ -10,11 +10,23 @@ public class Garen extends Champion{
         super(name, hp, attackDamage, defense);
     }
 
+    @Override
+    public void useQ(Champion target) {
+        System.out.println(name + "의 결정타(Q)");
+        target.takeDamage((attackDamage)+30);
+    }
+
     public void levelUp() {
         level += 1;
-        hp += 98;
-        attackDamage += 69;
+        hp += 99;
+        attackDamage += 3;
+        defence += 5;
     }
 
 
+    @Override
+    public void dash(Champion target) {
+        System.out.println(getName() + " 돌진!");
+        target.takeDamage((attackDamage)-10);
+    }
 }
