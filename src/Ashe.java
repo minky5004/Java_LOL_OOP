@@ -17,6 +17,7 @@ public class Ashe extends Champion implements RangedChampion {
     }
 
     public void levelUp() {
+        System.out.println(getName()+"의 레벨업!");
         level += 1;
         hp += 101;
         attackDamage += 3;

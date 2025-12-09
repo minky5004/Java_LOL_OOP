@@ -19,6 +19,8 @@ public abstract class Champion {
         target.takeDamage(attackDamage);
     }
 
+
+
     public abstract void useQ(Champion target);
 
     public void takeDamage(int damage) {
@@ -26,7 +28,15 @@ public abstract class Champion {
         if (actualDamage < 0) actualDamage = 0;
 
         hp -= actualDamage;
-        System.out.println(name + "이(가) " + actualDamage + " 피해를 입음! (남은 HP: " + hp + ")");
+        if (hp <= 0){
+            System.out.println(name + "이(가) 사망하였습니다.");
+
+        }
+        else{
+            System.out.println(name + "이(가) " + actualDamage + " 피해를 입음! (남은 HP: " + hp + ")");
+
+        }
+
     }
 
     public String getName() {

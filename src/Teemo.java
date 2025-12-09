@@ -12,11 +12,12 @@ public class Teemo extends Champion implements RangedChampion {
 
     @Override
     public void useQ(Champion target) {
-        System.out.println(name + "의 실명다트(Q)");
+        System.out.println(getName() + "의 실명다트(Q)");
         target.takeDamage(80);
     }
 
     public void levelUp() {
+        System.out.println(getName()+"의 레벨업!");
         level += 1;
         hp += 104;
         attackDamage += 3;

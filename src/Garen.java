@@ -12,11 +12,12 @@ public class Garen extends Champion implements MeleeChampion{
 
     @Override
     public void useQ(Champion target) {
-        System.out.println(name + "의 결정타(Q)");
+        System.out.println(getName() + "의 결정타(Q)");
         target.takeDamage((attackDamage)+30);
     }
 
     public void levelUp() {
+        System.out.println(getName()+"의 레벨업!");
         level += 1;
         hp += 99;
         attackDamage += 3;

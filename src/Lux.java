@@ -12,11 +12,12 @@ public class Lux extends Champion implements RangedChampion{
 
     @Override
     public void useQ(Champion target) {
-        System.out.println(name + "의 빛의 속박(Q)");
+        System.out.println(getName() + "의 빛의 속박(Q)");
         target.takeDamage(80);
     }
 
     public void levelUp() {
+        System.out.println(getName()+"의 레벨업!");
         level += 1;
         hp += 98;
         attackDamage += 3;
