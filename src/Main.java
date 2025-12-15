@@ -20,6 +20,7 @@ public class Main {
 
         System.out.println("=== 전투 종료 ===");
         System.out.println("=== 전투 결과 ===");
+        System.out.println("전투 횟수 : " + Champion.getBattleCount());
 
 }
 }

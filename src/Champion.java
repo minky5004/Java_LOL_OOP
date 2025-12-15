@@ -30,7 +30,7 @@ public abstract class Champion {
         hp -= actualDamage;
         if (hp <= 0){
             System.out.println(name + "이(가) 사망하였습니다.");
-
+            setBattleCount();
         }
         else{
             System.out.println(name + "이(가) " + actualDamage + " 피해를 입음! (남은 HP: " + hp + ")");
@@ -52,5 +52,15 @@ public abstract class Champion {
                 ", attackDamage=" + attackDamage +
                 ", defense=" + defense +
                 '}';
+    }
+
+    private static int battleCount = 0;
+
+    public static int getBattleCount() {
+        return battleCount;
+    }
+
+    public static void setBattleCount() {
+        Champion.battleCount = battleCount++;
     }
 }
