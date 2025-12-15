@@ -20,7 +20,6 @@ public abstract class Champion {
     }
 
 
-
     public abstract void useQ(Champion target);
 
     public void takeDamage(int damage) {
@@ -63,4 +62,9 @@ public abstract class Champion {
     public static void setBattleCount() {
         Champion.battleCount = battleCount++;
     }
+
+    public final void resurrect() {
+        hp+= 1;
+    }
+
 }
