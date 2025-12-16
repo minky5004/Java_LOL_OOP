@@ -6,21 +6,17 @@ public class Main {
         Lux lux = new Lux("Lux",580,54,21);
         Teemo teemo = new Teemo("Teemo",50,54,24);
 
-        System.out.println("==== 소환사의 협곡에 오신 것을 환영합니다. ====");
+        Team<Champion> red = new Team<>("레드팀");
+        Team<Champion> purple = new Team<>("퍼플팀");
 
-        System.out.println("=== 전투 시작 ===");
+        red.addChamp(garen);
+        red.addChamp(lux);
 
-        teemo.basicAttack(garen);
-        garen.basicAttack(teemo);
+        purple.addChamp(garen);
+        purple.addChamp(teemo);
 
-        teemo.useQ(garen);
-        garen.useQ(teemo);
 
-        garen.levelUp();
-
-        System.out.println("=== 전투 종료 ===");
-        System.out.println("=== 전투 결과 ===");
-        System.out.println("전투 횟수 : " + Champion.getBattleCount());
+        fight.oneVsOne(red,purple);
 
 }
 }
